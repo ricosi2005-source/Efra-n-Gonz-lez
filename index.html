@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dr. Efraín González | Medicina Estética, Pediatría y Gastroenterología</title>
+<meta name="description" content="Tarjeta digital del Dr. Efraín González. Agenda tu cita por WhatsApp en Bogotá.">
+<meta name="theme-color" content="#F8FAFC">
+
+<!-- Tipografías -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Tailwind por CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      colors: { perla:'#F8FAFC', marino:'#0F172A', salvia:'#8FA89A', salviaClaro:'#E6EEE9', oro:'#C9A38F', oroClaro:'#F5EAE4' },
+      fontFamily: { serif:['"Cormorant Garamond"','serif'], sans:['Manrope','system-ui','sans-serif'] }
+    } }
+  }
+</script>
+
+<style>
+  html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+  body { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
+  /* Pulso del botón de WhatsApp */
+  @keyframes pulso { 0%{box-shadow:0 0 0 0 rgba(37,211,102,.55)} 70%{box-shadow:0 0 0 14px rgba(37,211,102,0)} 100%{box-shadow:0 0 0 0 rgba(37,211,102,0)} }
+  .pulso { animation: pulso 2.2s infinite; }
+  /* Acordeón fluido */
+  .panel { display:grid; grid-template-rows:0fr; transition:grid-template-rows .35s ease; }
+  .panel > div { overflow:hidden; }
+  .abierto .panel { grid-template-rows:1fr; }
+  .abierto .flecha { transform:rotate(180deg); }
+  .flecha { transition:transform .3s ease; }
+  /* Carrusel */
+  .carrusel { scroll-snap-type:x mandatory; scrollbar-width:none; }
+  .carrusel::-webkit-scrollbar { display:none; }
+  .carrusel > * { scroll-snap-align:center; }
+  .btn { transition:transform .2s ease, box-shadow .2s ease, background-color .2s ease; }
+  .btn:hover { transform:translateY(-2px); }
+  .btn:active { transform:scale(.97); }
+  :focus-visible { outline:2px solid #0F172A; outline-offset:3px; }
+  @media (prefers-reduced-motion: reduce) { .pulso{animation:none} * {transition:none !important} html{scroll-behavior:auto} }
+</style>
+</head>
+
+<body class="bg-perla text-marino font-sans antialiased">
+<main class="mx-auto max-w-md px-5 pt-10">
+
+  <!-- ============ 1. CABECERA ============ -->
+  <header class="text-center">
+    <!-- AVATAR: para usar una foto real, reemplaza el <div> por:
+         <img src="foto-doctor.jpg" alt="Dr. Efraín González" class="h-32 w-32 rounded-full object-cover ring-4 ring-white shadow-lg"> -->
+    <div class="mx-auto flex h-32 w-32 items-center justify-center rounded-full bg-marino ring-4 ring-oroClaro shadow-lg">
+      <span class="font-serif text-5xl font-semibold text-oroClaro">EG</span>
+    </div>
+    <h1 class="mt-5 font-serif text-4xl font-bold leading-tight">Dr. Efraín González</h1>
+    <p class="mt-1 text-sm text-slate-600">Medicina Estética · Pediatría · Gastroenterología</p>
+    <span class="mt-4 inline-flex items-center gap-2 rounded-full bg-salviaClaro px-4 py-1.5 text-xs font-semibold text-marino">
+      <svg class="h-4 w-4 text-salvia" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 2.1 3.2-.3 1 3 2.8 1.7-.9 3.1.9 3.1-2.8 1.7-1 3-3.2-.3L12 22l-2.4-2.1-3.2.3-1-3-2.8-1.7.9-3.1-.9-3.1 2.8-1.7 1-3 3.2.3L12 2zm-1.2 13.2l5-5-1.1-1.1-3.9 3.9-1.6-1.6-1.1 1.1 2.7 2.7z"/></svg>
+      Especialista Integral en Salud y Bienestar
+    </span>
+  </header>
+
+  <!-- ============ 2. CONTACTO RÁPIDO (en página) ============ -->
+  <section class="mt-8 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200">
+    <p class="text-sm text-slate-600">Consultorio 402, Calle 93 # 11A-28, Bogotá</p>
+    <p class="mt-1 text-sm text-slate-600">Atención con cita previa.</p>
+    <a data-wa href="#" target="_blank" rel="noopener"
+       class="btn mt-4 flex items-center justify-center gap-2 rounded-xl bg-marino py-3.5 text-sm font-semibold text-white hover:bg-slate-800">
+      Agendar cita por WhatsApp
+    </a>
+  </section>
+
+  <!-- ============ 3. ESPECIALIDADES (acordeón) ============ -->
+  <section class="mt-10" aria-labelledby="t-esp">
+    <h2 id="t-esp" class="font-serif text-2xl font-bold">Especialidades</h2>
+    <p class="mt-1 text-sm text-slate-600">Toca una para ver el detalle y la tarifa orientativa.</p>
+
+    <div class="mt-4 space-y-3">
+
+      <!-- Medicina Estética (acento oro rosa) -->
+      <article class="acordeon rounded-2xl bg-white ring-1 ring-oro/40">
+        <button class="flex w-full items-center justify-between gap-3 p-4 text-left" aria-expanded="false">
+          <span class="flex items-center gap-3">
+            <span class="flex h-11 w-11 items-center justify-center rounded-full bg-oroClaro text-oro">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 3l1.8 4.7L18.5 9l-4.7 1.8L12 15.5l-1.8-4.7L5.5 9l4.7-1.3L12 3zM19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15z"/></svg>
+            </span>
+            <span><span class="block font-semibold">Medicina Estética</span><span class="block text-xs text-slate-500">Armonía natural, sin exageraciones</span></span>
+          </span>
+          <svg class="flecha h-5 w-5 shrink-0 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="panel"><div>
+          <div class="px-4 pb-5 text-sm text-slate-600">
+            <p>Tratamientos médicos personalizados para realzar tu rostro con resultados naturales y seguros.</p>
+            <ul class="mt-3 space-y-1.5">
+              <li>• Rejuvenecimiento facial</li>
+              <li>• Toxina botulínica</li>
+              <li>• Ácido hialurónico y bioestimuladores</li>
+              <li>• Plan de cuidado de la piel</li>
+            </ul>
+            <div class="mt-4 flex items-center justify-between rounded-xl bg-oroClaro px-4 py-3">
+              <span class="font-medium text-marino">Valoración estética</span>
+              <span class="font-bold text-marino">$120.000 COP</span>
+            </div>
+          </div>
+        </div></div>
+      </article>
+
+      <!-- Pediatría (acento salvia) -->
+      <article class="acordeon rounded-2xl bg-white ring-1 ring-salvia/40">
+        <button class="flex w-full items-center justify-between gap-3 p-4 text-left" aria-expanded="false">
+          <span class="flex items-center gap-3">
+            <span class="flex h-11 w-11 items-center justify-center rounded-full bg-salviaClaro text-salvia">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.6-9-9.3C1.7 8.6 3.5 5 7 5c2 0 3.4 1.2 5 3 1.6-1.8 3-3 5-3 3.5 0 5.3 3.6 4 6.7C19 16.4 12 21 12 21z"/></svg>
+            </span>
+            <span><span class="block font-semibold">Pediatría</span><span class="block text-xs text-slate-500">Cuidado integral desde el nacimiento</span></span>
+          </span>
+          <svg class="flecha h-5 w-5 shrink-0 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="panel"><div>
+          <div class="px-4 pb-5 text-sm text-slate-600">
+            <p>Atención cercana para tu hijo en cada etapa, con acompañamiento claro para los padres.</p>
+            <ul class="mt-3 space-y-1.5">
+              <li>• Controles de crecimiento y desarrollo</li>
+              <li>• Esquema de vacunación</li>
+              <li>• Enfermedades frecuentes de la infancia</li>
+              <li>• Orientación en nutrición y sueño</li>
+            </ul>
+            <div class="mt-4 flex items-center justify-between rounded-xl bg-salviaClaro px-4 py-3">
+              <span class="font-medium text-marino">Control pediátrico</span>
+              <span class="font-bold text-marino">$150.000 COP</span>
+            </div>
+          </div>
+        </div></div>
+      </article>
+
+      <!-- Gastrointestinal (acento marino) -->
+      <article class="acordeon rounded-2xl bg-white ring-1 ring-slate-300">
+        <button class="flex w-full items-center justify-between gap-3 p-4 text-left" aria-expanded="false">
+          <span class="flex items-center gap-3">
+            <span class="flex h-11 w-11 items-center justify-center rounded-full bg-slate-100 text-marino">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v6c0 2-3 2-3 5s2 4 4 4 2-2 4-2 4 1 4-3-3-3-3-6V3"/><path d="M10 18v3M14 16v5"/></svg>
+            </span>
+            <span><span class="block font-semibold">Enfermedades gastrointestinales</span><span class="block text-xs text-slate-500">Diagnóstico y manejo del sistema digestivo</span></span>
+          </span>
+          <svg class="flecha h-5 w-5 shrink-0 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="panel"><div>
+          <div class="px-4 pb-5 text-sm text-slate-600">
+            <p>Estudio detallado de tus síntomas digestivos y un plan de tratamiento que puedas seguir.</p>
+            <ul class="mt-3 space-y-1.5">
+              <li>• Gastritis</li>
+              <li>• Reflujo gastroesofágico</li>
+              <li>• Síndrome de intestino irritable</li>
+              <li>• Orientación nutricional digestiva</li>
+            </ul>
+            <div class="mt-4 flex items-center justify-between rounded-xl bg-slate-100 px-4 py-3">
+              <span class="font-medium text-marino">Consulta gastroenterología</span>
+              <span class="font-bold text-marino">$180.000 COP</span>
+            </div>
+          </div>
+        </div></div>
+      </article>
+    </div>
+    <p class="mt-3 text-xs text-slate-500">Tarifas orientativas. El valor final se confirma al agendar.</p>
+  </section>
+
+  <!-- ============ 4. RESEÑAS (carrusel) ============ -->
+  <section class="mt-12" aria-labelledby="t-res">
+    <h2 id="t-res" class="font-serif text-2xl font-bold">Lo que dicen los pacientes</h2>
+    <div class="carrusel -mx-5 mt-4 flex gap-3 overflow-x-auto px-5 pb-2" id="carrusel">
+      <!-- Para añadir una reseña, copia uno de los bloques <figure> -->
+      <figure class="w-[82%] shrink-0 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200">
+        <div class="text-oro" aria-label="5 de 5 estrellas">★★★★★</div>
+        <blockquote class="mt-2 text-sm text-slate-700">Explica todo con calma y los resultados se ven naturales. Me sentí acompañada desde la primera cita.</blockquote>
+        <figcaption class="mt-3 text-xs font-semibold">Carolina M. · Medicina estética</figcaption>
+      </figure>
+      <figure class="w-[82%] shrink-0 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200">
+        <div class="text-oro" aria-label="5 de 5 estrellas">★★★★★</div>
+        <blockquote class="mt-2 text-sm text-slate-700">Mi hijo de cuatro años no le tiene miedo. Nos resolvió todas las dudas sobre su crecimiento.</blockquote>
+        <figcaption class="mt-3 text-xs font-semibold">Andrés P. · Pediatría</figcaption>
+      </figure>
+      <figure class="w-[82%] shrink-0 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200">
+        <div class="text-oro" aria-label="5 de 5 estrellas">★★★★★</div>
+        <blockquote class="mt-2 text-sm text-slate-700">Después de años con reflujo, por fin tuve un diagnóstico claro y un tratamiento que funciona.</blockquote>
+        <figcaption class="mt-3 text-xs font-semibold">Luz Marina R. · Gastroenterología</figcaption>
+      </figure>
+    </div>
+    <div class="mt-3 flex justify-center gap-2" id="puntos" aria-hidden="true"></div>
+  </section>
+
+  <!-- ============ 5. PIE DE PÁGINA ============ -->
+  <footer class="mt-12 border-t border-slate-200 pt-6 pb-4 text-center">
+    <div class="flex justify-center gap-3">
+      <!-- Cambia los enlaces de redes en las constantes de JavaScript (INSTAGRAM / TIKTOK) -->
+      <a data-ig href="#" target="_blank" rel="noopener" aria-label="Instagram" class="btn flex h-11 w-11 items-center justify-center rounded-full bg-marino text-white hover:bg-slate-700">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".8" fill="currentColor"/></svg>
+      </a>
+      <a data-tt href="#" target="_blank" rel="noopener" aria-label="TikTok" class="btn flex h-11 w-11 items-center justify-center rounded-full bg-marino text-white hover:bg-slate-700">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.3 2.3 1.7 3.8 4 4v3.1c-1.5 0-2.9-.4-4-1.1v6.2c0 3.200-2.600 5.800-5.800 5.800S5.800 18.400 5.800 15.200 8.400 9.400 11.600 9.400c.3 0 .6 0 .9.100v3.200c-.3-.1-.6-.2-.9-.2-1.500 0-2.700 1.200-2.700 2.700s1.200 2.700 2.700 2.700 2.700-1.200 2.700-2.700V3h3.200z"/></svg>
+      </a>
+    </div>
+    <p class="mt-4 text-xs leading-relaxed text-slate-500">Esta página es una plataforma de contacto directo con el consultorio. No reemplaza una consulta médica ni sirve para atender urgencias. Si tienes una emergencia, llama al 123.</p>
+    <p class="mt-3 text-xs text-slate-400">© <span id="anio">2026</span> Dr. Efraín González. Todos los derechos reservados.</p>
+  </footer>
+</main>
+
+<!-- ============ BARRA FIJA DE CONTACTO ============ -->
+<nav class="fixed inset-x-0 bottom-0 z-50 border-t border-slate-200 bg-white/95 backdrop-blur" style="padding-bottom:env(safe-area-inset-bottom)" aria-label="Contacto rápido">
+  <div class="mx-auto flex max-w-md items-center gap-2 px-4 py-3">
+    <a data-wa href="#" target="_blank" rel="noopener"
+       class="btn pulso flex flex-1 items-center justify-center gap-2 rounded-xl bg-[#25D366] py-3 text-sm font-bold text-white hover:bg-[#1fb957]">
+      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.600 15L2 22l5.200-1.400A10 10 0 1012 2zm0 18.200c-1.500 0-3-.4-4.200-1.200l-.3-.2-3 .8.8-3-.2-.3A8.200 8.200 0 1112 20.200zm4.500-6.100c-.2-.1-1.500-.7-1.700-.8-.2-.1-.4-.1-.6.100l-.8 1c-.1.200-.3.200-.5.100-1.500-.7-2.500-1.300-3.500-2.900-.3-.5.300-.5.800-1.500.1-.2 0-.3 0-.5l-.8-1.800c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.100-.7.300-.7.700-1 1.500-1 2.300 0 .8.400 1.600.9 2.300 1.100 1.600 2.500 2.800 4.300 3.500 1.600.6 2.200.7 3 .6.500-.1 1.500-.6 1.700-1.200.2-.6.200-1.100.2-1.200-.1-.2-.3-.3-.6-.4z"/></svg>
+      WhatsApp
+    </a>
+    <a id="btn-llamar" href="#" class="btn flex flex-1 items-center justify-center gap-2 rounded-xl bg-marino py-3 text-sm font-semibold text-white hover:bg-slate-700">
+      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M5 4h4l2 5-2.500 1.500a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg>
+      Llamar
+    </a>
+    <a id="btn-mapa" href="#" target="_blank" rel="noopener" class="btn flex flex-1 items-center justify-center gap-2 rounded-xl bg-salviaClaro py-3 text-sm font-semibold text-marino hover:bg-[#d5e3da]">
+      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 21s7-6.100 7-11a7 7 0 10-14 0c0 4.900 7 11 7 11z"/><circle cx="12" cy="10" r="2.500"/></svg>
+      Cómo llegar
+    </a>
+  </div>
+</nav>
+
+<script>
+/* ==========================================================
+   CONFIGURACIÓN — edita aquí teléfono, mensaje, dirección y redes
+   ========================================================== */
+const CONFIG = {
+  telefonoWhatsApp: "573104567890",   // Formato internacional sin "+" ni espacios (57 = Colombia)
+  telefonoLlamada:  "+573104567890",  // Con "+" para el botón de llamada
+  mensaje: "Hola Dr. Efraín, vi su tarjeta digital y me gustaría agendar una cita de valoración / consulta.",
+  direccion: "Calle 93 # 11A-28, Consultorio 402, Bogotá, Colombia",
+  instagram: "https://instagram.com/",  // Reemplaza por el perfil real
+  tiktok:    "https://www.tiktok.com/"  // Reemplaza por el perfil real
+};
+
+/* Enlaces automáticos */
+const waURL   = `https://wa.me/${CONFIG.telefonoWhatsApp}?text=${encodeURIComponent(CONFIG.mensaje)}`;
+const mapaURL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CONFIG.direccion)}`;
+document.querySelectorAll('[data-wa]').forEach(a => a.href = waURL);
+document.getElementById('btn-llamar').href = `tel:${CONFIG.telefonoLlamada}`;
+document.getElementById('btn-mapa').href = mapaURL;
+document.querySelector('[data-ig]').href = CONFIG.instagram;
+document.querySelector('[data-tt]').href = CONFIG.tiktok;
+document.getElementById('anio').textContent = new Date().getFullYear();
+
+/* Acordeón: abre una especialidad y cierra las demás */
+const items = document.querySelectorAll('.acordeon');
+items.forEach(item => {
+  const boton = item.querySelector('button');
+  boton.addEventListener('click', () => {
+    const abrir = !item.classList.contains('abierto');
+    items.forEach(i => { i.classList.remove('abierto'); i.querySelector('button').setAttribute('aria-expanded','false'); });
+    if (abrir) { item.classList.add('abierto'); boton.setAttribute('aria-expanded','true'); }
+  });
+});
+
+/* Carrusel: indicadores de posición */
+const carrusel = document.getElementById('carrusel');
+const puntos = document.getElementById('puntos');
+const tarjetas = [...carrusel.children];
+tarjetas.forEach((_, i) => {
+  const p = document.createElement('span');
+  p.className = 'h-1.5 w-1.5 rounded-full transition-all ' + (i === 0 ? 'bg-marino w-4' : 'bg-slate-300');
+  puntos.appendChild(p);
+});
+carrusel.addEventListener('scroll', () => {
+  const idx = Math.round(carrusel.scrollLeft / (tarjetas[0].offsetWidth + 12));
+  [...puntos.children].forEach((p, i) => {
+    p.className = 'h-1.5 rounded-full transition-all ' + (i === idx ? 'bg-marino w-4' : 'bg-slate-300 w-1.5');
+  });
+}, { passive: true });
+</script>
+</body>
+</html>
