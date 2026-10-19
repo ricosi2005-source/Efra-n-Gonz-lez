@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dr. Efraín González | Medicina Estética, Pediatría y Gastroenterología en Bogotá</title>
+<meta name="description" content="Agenda tu cita con el Dr. Efraín González en Bogotá. Medicina estética, pediatría y gastroenterología.">
+<meta name="theme-color" content="#0F172A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ===== COLORES Y BASE (edita aquí la paleta) ===== */
+:root{--perla:#F8FAFC;--marino:#0F172A;--marino2:#1E293B;--oro:#B98A78;--oroc:#F5EAE4;--salvia:#7E9B8B;--salviac:#E6EEE9;--gris:#64748B;--linea:#E2E8F0;--ac:var(--oro);--acc:var(--oroc)}
+*{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--perla);color:var(--marino);line-height:1.55;padding-bottom:calc(88px + env(safe-area-inset-bottom));-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;line-height:1.05}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+svg{width:1.25em;height:1.25em;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+:focus-visible{outline:2px solid var(--oro);outline-offset:3px}
+.wrap{max-width:480px;margin:0 auto;padding:0 22px}
+section{padding:54px 0 0}
+h2{font-size:2.1rem;margin-bottom:8px}
+.sub{color:var(--gris);font-size:.93rem;max-width:34ch}
+
+/* ===== HERO ===== */
+.hero{background:var(--marino);color:#fff;padding:34px 0 84px;border-radius:0 0 40px 40px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;width:340px;height:340px;border-radius:50%;right:-130px;top:-90px;background:radial-gradient(circle,rgba(185,138,120,.35),transparent 70%)}
+.estado{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;padding:6px 12px;border-radius:99px;background:rgba(255,255,255,.1)}
+.estado i{width:8px;height:8px;border-radius:50%;background:#94A3B8}
+.estado.on i{background:#4ADE80;box-shadow:0 0 0 4px rgba(74,222,128,.22)}
+.arco{width:176px;height:224px;margin:30px auto 0;border-radius:99px 99px 18px 18px;position:relative;
+  background:linear-gradient(160deg,#334155,#1E293B);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.arco::after{content:"";position:absolute;inset:-9px;border:1px solid var(--oro);border-radius:105px 105px 26px 26px;pointer-events:none}
+.arco{outline:1px solid transparent;box-shadow:0 0 0 9px transparent}
+.arco img{width:100%;height:100%;object-fit:cover}
+.arco span{font-family:"Cormorant Garamond",serif;font-size:4.4rem;color:var(--oroc)}
+.hero h1{font-size:3.2rem;text-align:center;margin-top:34px}
+.hero .rol{text-align:center;color:#CBD5E1;font-size:.95rem;margin-top:10px}
+.insignia{display:flex;justify-content:center;margin-top:16px}
+.insignia span{display:inline-flex;align-items:center;gap:7px;font-size:.78rem;font-weight:600;color:var(--marino);background:var(--oroc);padding:7px 14px;border-radius:99px}
+.insignia svg{color:var(--oro);fill:var(--oro);stroke:none}
+.entra{opacity:0;transform:translateY(14px);animation:entra .8s cubic-bezier(.2,.7,.2,1) forwards}
+.entra:nth-child(2){animation-delay:.1s}.entra:nth-child(3){animation-delay:.2s}.entra:nth-child(4){animation-delay:.3s}
+@keyframes entra{to{opacity:1;transform:none}}
+
+/* ===== TARJETA DE ACCIONES (superpuesta al hero) ===== */
+.acciones{margin:-52px 22px 0;max-width:436px;margin-inline:auto;position:relative;z-index:2;background:#fff;border-radius:22px;padding:18px;box-shadow:0 18px 40px -18px rgba(15,23,42,.35)}
+.cta{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:16px;border-radius:14px;background:#128C4B;color:#fff;font-weight:700;transition:transform .2s,background .2s;animation:pulso 2.4s infinite}
+.cta:hover{background:#0f7a41;transform:translateY(-2px)}.cta:active{transform:scale(.98)}
+@keyframes pulso{0%{box-shadow:0 0 0 0 rgba(18,140,75,.45)}70%{box-shadow:0 0 0 14px rgba(18,140,75,0)}100%{box-shadow:0 0 0 0 rgba(18,140,75,0)}}
+.rapidas{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:14px}
+.rapidas a,.rapidas button{display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px 0;font-size:.72rem;font-weight:600;color:var(--marino2);border-radius:12px;transition:background .2s}
+.rapidas a:hover,.rapidas button:hover{background:var(--perla)}
+.rapidas svg{width:22px;height:22px;padding:0}
+
+/* ===== ESPECIALIDADES (pestañas) ===== */
+.tabs{display:flex;gap:6px;background:#EEF2F6;padding:5px;border-radius:16px;margin-top:22px}
+.tabs button{flex:1;padding:11px 4px;font-size:.8rem;font-weight:600;border-radius:12px;color:var(--gris);transition:all .25s}
+.tabs button[aria-selected=true]{background:#fff;color:var(--marino);box-shadow:0 2px 8px rgba(15,23,42,.1)}
+.panel{margin-top:14px;border-radius:26px;padding:26px 22px;background:var(--acc);animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}}
+.panel h3{font-size:2.1rem}
+.panel .lema{color:var(--marino2);opacity:.75;margin-top:6px;font-size:.95rem}
+.panel p.d{margin-top:14px;font-size:.93rem;color:var(--marino2)}
+.panel ul{list-style:none;margin-top:16px;display:grid;gap:9px}
+.panel li{display:flex;gap:10px;font-size:.92rem}
+.panel li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ac);margin-top:.5em;flex:none}
+.precio{display:flex;justify-content:space-between;align-items:baseline;margin-top:22px;padding-top:18px;border-top:1px solid rgba(15,23,42,.12)}
+.precio small{font-size:.82rem;color:var(--marino2)}
+.precio b{font-family:"Cormorant Garamond",serif;font-size:1.9rem}
+.panel .go{margin-top:16px;display:flex;justify-content:center;gap:8px;padding:14px;border-radius:14px;background:var(--marino);color:#fff;font-weight:600;font-size:.92rem;transition:transform .2s}
+.panel .go:hover{transform:translateY(-2px)}
+.nota{font-size:.76rem;color:var(--gris);margin-top:12px}
+
+/* ===== PASOS (secuencia real) ===== */
+.pasos{list-style:none;margin-top:24px;counter-reset:p;position:relative}
+.pasos li{counter-increment:p;position:relative;padding:0 0 26px 54px}
+.pasos li::before{content:counter(p);position:absolute;left:0;top:0;width:36px;height:36px;border-radius:50%;background:var(--marino);color:var(--oroc);font-family:"Cormorant Garamond",serif;font-size:1.25rem;display:flex;align-items:center;justify-content:center}
+.pasos li:not(:last-child)::after{content:"";position:absolute;left:17px;top:40px;bottom:6px;width:1px;background:var(--linea)}
+.pasos b{display:block}.pasos span{font-size:.9rem;color:var(--gris)}
+
+/* ===== FORMULARIO DE CITA ===== */
+.cita{background:var(--marino);color:#fff;border-radius:28px;padding:28px 22px;margin-top:54px}
+.cita h2{color:#fff}.cita .sub{color:#CBD5E1}
+.cita form{display:grid;gap:12px;margin-top:20px}
+.cita label{font-size:.8rem;color:#CBD5E1;display:grid;gap:6px}
+.cita input,.cita select{width:100%;padding:14px;border-radius:12px;border:1px solid #334155;background:var(--marino2);color:#fff;font:inherit;font-size:1rem}
+.cita input:focus,.cita select:focus{outline:2px solid var(--oro);border-color:transparent}
+.cita button{margin-top:6px;padding:15px;border-radius:14px;background:var(--oroc);color:var(--marino);font-weight:700;transition:transform .2s}
+.cita button:hover{transform:translateY(-2px)}
+
+/* ===== UBICACIÓN ===== */
+.lugar{margin-top:20px;border:1px solid var(--linea);border-radius:22px;background:#fff;overflow:hidden}
+.lugar .mapa{height:110px;background:repeating-linear-gradient(45deg,#E6EEE9 0 14px,#EEF3F0 14px 28px);display:flex;align-items:center;justify-content:center;color:var(--marino)}
+.lugar .mapa svg{width:36px;height:36px;color:var(--oro)}
+.lugar .txt{padding:18px}
+.lugar .btns{display:flex;gap:8px;margin-top:14px}
+.lugar .btns a,.lugar .btns button{flex:1;text-align:center;padding:12px;border-radius:12px;font-size:.85rem;font-weight:600;background:var(--perla);border:1px solid var(--linea);transition:background .2s}
+.lugar .btns a:first-child{background:var(--marino);color:#fff;border-color:var(--marino)}
+
+/* ===== PREGUNTAS ===== */
+details{border-bottom:1px solid var(--linea);padding:16px 0}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--oro);font-size:1.3rem;line-height:1}
+details[open] summary::after{content:"−"}
+details p{margin-top:10px;font-size:.92rem;color:var(--gris)}
+
+/* ===== RESEÑAS ===== */
+.carr{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:22px -22px 0;padding:0 22px 6px;scrollbar-width:none}
+.carr::-webkit-scrollbar{display:none}
+.res{flex:0 0 82%;scroll-snap-align:center;background:#fff;border:1px solid var(--linea);border-radius:22px;padding:22px}
+.res q{display:block;font-family:"Cormorant Garamond",serif;font-size:1.3rem;line-height:1.3;quotes:none}
+.res .e{color:var(--oro);letter-spacing:2px;font-size:.9rem;margin-bottom:8px}
+.res cite{display:block;margin-top:14px;font-style:normal;font-size:.8rem;color:var(--gris)}
+
+/* ===== PIE ===== */
+footer{margin-top:64px;background:var(--marino);color:#CBD5E1;padding:38px 0 30px;border-radius:36px 36px 0 0;font-size:.78rem}
+footer .redes{display:flex;gap:10px;margin-bottom:18px}
+footer .redes a{width:44px;height:44px;border-radius:50%;background:var(--marino2);display:flex;align-items:center;justify-content:center;color:#fff;transition:background .2s}
+footer .redes a:hover{background:var(--oro)}
+footer p+p{margin-top:10px}
+
+/* ===== BARRA FIJA (aparece al bajar del hero) ===== */
+.barra{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom));transform:translate(-50%,140%);width:calc(100% - 28px);max-width:452px;z-index:20;display:flex;gap:8px;padding:8px;border-radius:22px;background:rgba(15,23,42,.94);backdrop-filter:blur(10px);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.barra.ver{transform:translate(-50%,0)}
+.barra a,.barra button{display:flex;align-items:center;justify-content:center;gap:8px;border-radius:15px;font-weight:700;font-size:.9rem;color:#fff}
+.barra .w{flex:1;background:#128C4B;padding:13px}
+.barra .i{width:48px;background:var(--marino2)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.entra{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+
+<body>
+<!-- ============ 1. HERO ============ -->
+<header class="hero">
+  <div class="wrap" style="text-align:center">
+    <div class="entra"><span class="estado" id="estado"><i></i><span>Consultando horario…</span></span></div>
+    <!-- Foto real: dentro del arco pon <img src="foto-doctor.jpg" alt="Dr. Efraín González"> -->
+    <div class="arco entra"><span>EG</span></div>
+    <h1 class="entra">Dr. Efraín<br>González</h1>
+    <p class="rol entra" id="rol"></p>
+    <div class="insignia entra"><span><svg viewBox="0 0 24 24"><path d="M12 2l2.4 2.1 3.2-.3 1 3 2.8 1.7-.9 3.1.9 3.1-2.8 1.7-1 3-3.2-.3L12 22l-2.4-2.1-3.2.3-1-3-2.8-1.7.9-3.1-.9-3.1 2.8-1.7 1-3 3.2.3z"/></svg>Especialista Integral en Salud y Bienestar</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- ============ 2. ACCIONES ============ -->
+  <div class="acciones" id="acciones">
+    <a class="cta" id="wa-principal" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M3 21l1.6-5A9 9 0 1112 21a9 9 0 01-4.300-1.100z"/><path d="M9 8.500c0 3.300 3.200 6.500 6.500 6.500l1-1.500-2-1-1 .8c-1-.4-2-1.300-2.400-2.300l.8-1-1-2z"/></svg>Agendar por WhatsApp</a>
+    <div class="rapidas">
+      <a id="llamar" href="#"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.500 1.500a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg>Llamar</a>
+      <a id="mapa1" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 10-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.500"/></svg>Ubicación</a>
+      <button id="guardar"><svg viewBox="0 0 24 24"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 20h14"/></svg>Guardar</button>
+      <button id="compartir"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.500"/><circle cx="6" cy="12" r="2.500"/><circle cx="18" cy="19" r="2.500"/><path d="M8.300 10.800l7.400-4.600M8.300 13.200l7.400 4.600"/></svg>Compartir</button>
+    </div>
+  </div>
+
+  <!-- ============ 3. ESPECIALIDADES ============ -->
+  <section>
+    <h2>¿En qué podemos ayudarte?</h2>
+    <p class="sub">Elige una especialidad y conoce el detalle y la tarifa orientativa.</p>
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <div id="panel" role="tabpanel"></div>
+    <p class="nota">Tarifas orientativas en pesos colombianos. El valor final se confirma al agendar.</p>
+  </section>
+
+  <!-- ============ 4. PRIMERA CITA ============ -->
+  <section>
+    <h2>Así es tu primera cita</h2>
+    <ol class="pasos">
+      <li><b>Nos escribes</b><span>Cuéntanos qué necesitas. Respondemos en horario de atención.</span></li>
+      <li><b>Confirmamos tu horario</b><span>Te enviamos fecha, hora y cómo llegar.</span></li>
+      <li><b>Valoración personalizada</b><span>El Dr. Efraín revisa tu caso y te explica el plan paso a paso.</span></li>
+    </ol>
+  </section>
+
+  <!-- ============ 5. SOLICITAR CITA ============ -->
+  <div class="cita">
+    <h2>Solicita tu cita</h2>
+    <p class="sub">Completa tres datos y te llevamos a WhatsApp con el mensaje listo.</p>
+    <form id="form">
+      <label>Tu nombre<input id="f-nombre" required autocomplete="name" placeholder="Ej. María Pérez"></label>
+      <label>Especialidad<select id="f-esp"></select></label>
+      <label>¿Cuándo te sirve?<select id="f-dia"><option>Lo antes posible</option><option>Esta semana</option><option>La próxima semana</option><option>Soy flexible</option></select></label>
+      <button type="submit">Continuar en WhatsApp</button>
+    </form>
+  </div>
+
+  <!-- ============ 6. UBICACIÓN ============ -->
+  <section>
+    <h2>Dónde estamos</h2>
+    <div class="lugar">
+      <div class="mapa"><svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 10-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.500"/></svg></div>
+      <div class="txt">
+        <b id="dir"></b>
+        <p style="font-size:.88rem;color:var(--gris);margin-top:4px" id="horario"></p>
+        <div class="btns"><a id="mapa2" href="#" target="_blank" rel="noopener">Cómo llegar</a><button id="copiar">Copiar dirección</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7. RESEÑAS ============ -->
+  <section>
+    <h2>Pacientes que nos recomiendan</h2>
+    <div class="carr" id="carr"></div>
+  </section>
+
+  <!-- ============ 8. PREGUNTAS FRECUENTES ============ -->
+  <section>
+    <h2>Preguntas frecuentes</h2>
+    <div id="faq" style="margin-top:12px"></div>
+  </section>
+</main>
+
+<!-- ============ 9. PIE DE PÁGINA ============ -->
+<footer>
+  <div class="wrap">
+    <div class="redes">
+      <a id="ig" href="#" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+      <a id="tt" href="#" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M14 3v11.500a3.500 3.500 0 11-3.500-3.500M14 3c.3 2.500 2 4 4.500 4.200"/></svg></a>
+    </div>
+    <p id="registro"></p>
+    <p>Esta página es una plataforma de contacto directo con el consultorio. No reemplaza una consulta médica ni atiende urgencias; en una emergencia llama al 123. Tus datos solo se usan para responder tu solicitud.</p>
+    <p>© <span id="anio"></span> Dr. Efraín González. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<!-- Barra fija: aparece al salir del hero -->
+<nav class="barra" id="barra" aria-label="Contacto rápido">
+  <a class="w" id="wa-barra" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M3 21l1.6-5A9 9 0 1112 21a9 9 0 01-4.300-1.100z"/></svg>Agendar cita</a>
+  <a class="i" id="llamar2" href="#" aria-label="Llamar"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.500 1.500a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></a>
+  <button class="i" id="guardar2" aria-label="Guardar contacto"><svg viewBox="0 0 24 24"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 20h14"/></svg></button>
+</nav>
+
+<script>
+/* =====================================================
+   CONFIGURACIÓN: aquí editas TODO el contenido de la página
+   ===================================================== */
+const C = {
+  nombre: "Dr. Efraín González",
+  rol: "Medicina Estética · Pediatría · Gastroenterología",
+  telWA: "573104567890",          // Internacional, sin "+" ni espacios
+  tel: "+573104567890",
+  direccion: "Calle 93 # 11A-28, Consultorio 402, Bogotá, Colombia",
+  registro: "Registro médico: RM 000000 (reemplazar por el real)",
+  mensaje: "Hola Dr. Efraín, vi su tarjeta digital y me gustaría agendar una cita de valoración / consulta.",
+  instagram: "https://instagram.com/",
+  tiktok: "https://www.tiktok.com/",
+  urlPagina: location.href,
+  /* Horario por día (0=domingo … 6=sábado): [hora apertura, hora cierre] en 24 h, o null si cierra */
+  horario: {0:null,1:[8,18],2:[8,18],3:[8,18],4:[8,18],5:[8,18],6:[8,13]},
+  horarioTexto: "Lunes a viernes 8:00 a. m. – 6:00 p. m. · Sábados 8:00 a. m. – 1:00 p. m.",
+  especialidades: [
+    {corto:"Estética", nombre:"Medicina Estética", color:"#B98A78", fondo:"#F5EAE4",
+     lema:"Armonía natural, sin exageraciones.",
+     desc:"Tratamientos médicos personalizados para realzar tu rostro con resultados naturales y seguros.",
+     items:["Rejuvenecimiento facial","Toxina botulínica","Ácido hialurónico y bioestimuladores","Plan de cuidado de la piel"],
+     precioTxt:"Valoración estética", precio:"$120.000 COP",
+     msg:"Hola Dr. Efraín, quiero agendar una valoración de medicina estética."},
+    {corto:"Pediatría", nombre:"Pediatría", color:"#7E9B8B", fondo:"#E6EEE9",
+     lema:"Cuidado integral desde el nacimiento.",
+     desc:"Atención cercana para tu hijo en cada etapa, con acompañamiento claro para los padres.",
+     items:["Controles de crecimiento y desarrollo","Esquema de vacunación","Enfermedades frecuentes de la infancia","Orientación en nutrición y sueño"],
+     precioTxt:"Control pediátrico", precio:"$150.000 COP",
+     msg:"Hola Dr. Efraín, quiero agendar un control pediátrico para mi hijo/a."},
+    {corto:"Digestivo", nombre:"Gastroenterología", color:"#475569", fondo:"#E8EDF3",
+     lema:"Diagnóstico claro para tu sistema digestivo.",
+     desc:"Estudio detallado de tus síntomas y un plan de tratamiento que puedas seguir en tu día a día.",
+     items:["Gastritis","Reflujo gastroesofágico","Síndrome de intestino irritable","Orientación nutricional digestiva"],
+     precioTxt:"Consulta gastroenterología", precio:"$180.000 COP",
+     msg:"Hola Dr. Efraín, quiero agendar una consulta de gastroenterología."}
+  ],
+  /* Reseñas de EJEMPLO: reemplázalas por reseñas reales antes de publicar */
+  resenas: [
+    {t:"Explica todo con calma y los resultados se ven naturales.", n:"Carolina M.", e:"Medicina estética"},
+    {t:"Mi hijo no le tiene miedo y resolvió todas mis dudas.", n:"Andrés P.", e:"Pediatría"},
+    {t:"Por fin tuve un diagnóstico claro para mi reflujo.", n:"Luz Marina R.", e:"Gastroenterología"}
+  ],
+  faq: [
+    ["¿Debo agendar con anticipación?","Sí. Atendemos con cita previa para dedicarte el tiempo que necesitas."],
+    ["¿Qué debo llevar a la primera cita?","Tu documento, exámenes anteriores si los tienes y la lista de medicamentos que usas."],
+    ["¿Qué medios de pago aceptan?","Te confirmamos los medios disponibles al agendar tu cita por WhatsApp."],
+    ["¿Atienden urgencias?","No. Para una urgencia acude al servicio de urgencias más cercano o llama al 123."]
+  ]
+};
+
+/* =====================================================
+   LÓGICA (no necesitas editar de aquí hacia abajo)
+   ===================================================== */
+const $ = id => document.getElementById(id);
+const wa = txt => `https://wa.me/${C.telWA}?text=${encodeURIComponent(txt)}`;
+const mapa = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(C.direccion)}`;
+
+/* Textos y enlaces fijos */
+$("rol").textContent = C.rol;
+$("dir").textContent = C.direccion;
+$("horario").textContent = C.horarioTexto;
+$("registro").textContent = C.registro;
+$("anio").textContent = new Date().getFullYear();
+["wa-principal","wa-barra"].forEach(i => $(i).href = wa(C.mensaje));
+["llamar","llamar2"].forEach(i => $(i).href = "tel:" + C.tel);
+["mapa1","mapa2"].forEach(i => $(i).href = mapa);
+$("ig").href = C.instagram; $("tt").href = C.tiktok;
+
+/* Estado "atiende ahora" con hora de Bogotá */
+(function estado(){
+  const p = new Intl.DateTimeFormat("en-US",{timeZone:"America/Bogota",weekday:"short",hour:"numeric",hour12:false}).formatToParts(new Date());
+  const dias = {Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+  const d = dias[p.find(x=>x.type==="weekday").value], h = +p.find(x=>x.type==="hour").value % 24;
+  const r = C.horario[d], el = $("estado"), t = el.querySelector("span");
+  if (r && h >= r[0] && h < r[1]) { el.classList.add("on"); t.textContent = "Atendiendo ahora · hasta las " + (r[1] > 12 ? r[1]-12 : r[1]) + ":00 " + (r[1] >= 12 ? "p. m." : "a. m."); }
+  else t.textContent = "Fuera de horario · escríbenos y te respondemos";
+})();
+
+/* Pestañas de especialidades */
+let activa = 0;
+function pintar(){
+  const e = C.especialidades[activa];
+  document.querySelectorAll("#tabs button").forEach((b,i)=>b.setAttribute("aria-selected", i===activa));
+  $("panel").innerHTML = `<div class="panel" style="--ac:${e.color};--acc:${e.fondo}">
+    <h3>${e.nombre}</h3><p class="lema">${e.lema}</p><p class="d">${e.desc}</p>
+    <ul>${e.items.map(i=>`<li>${i}</li>`).join("")}</ul>
+    <div class="precio"><small>${e.precioTxt}</small><b>${e.precio}</b></div>
+    <a class="go" href="${wa(e.msg)}" target="_blank" rel="noopener">Agendar ${e.corto.toLowerCase()} por WhatsApp</a></div>`;
+}
+C.especialidades.forEach((e,i)=>{
+  const b = document.createElement("button");
+  b.textContent = e.corto; b.setAttribute("role","tab");
+  b.onclick = () => { activa = i; pintar(); };
+  $("tabs").appendChild(b);
+  $("f-esp").add(new Option(e.nombre, e.nombre));
+});
+pintar();
+
+/* Formulario → WhatsApp */
+$("form").addEventListener("submit", ev => {
+  ev.preventDefault();
+  const m = `Hola Dr. Efraín, soy ${$("f-nombre").value.trim()}. Quiero agendar una cita de ${$("f-esp").value}. Me sirve: ${$("f-dia").value.toLowerCase()}.`;
+  window.open(wa(m), "_blank", "noopener");
+});
+
+/* Reseñas y preguntas */
+$("carr").innerHTML = C.resenas.map(r=>`<div class="res"><div class="e" aria-label="5 de 5 estrellas">★★★★★</div><q>${r.t}</q><cite>${r.n} · ${r.e}</cite></div>`).join("");
+$("faq").innerHTML = C.faq.map(f=>`<details><summary>${f[0]}</summary><p>${f[1]}</p></details>`).join("");
+
+/* Guardar contacto (vCard) */
+function guardar(){
+  const v = ["BEGIN:VCARD","VERSION:3.0","FN:"+C.nombre,"N:González;Efraín;;Dr.;","TITLE:"+C.rol,"TEL;TYPE=CELL,WORK:"+C.tel,
+    "ADR;TYPE=WORK:;;"+C.direccion.replace(/,/g,"\\,")+";;;;","URL:"+C.urlPagina,"END:VCARD"].join("\r\n");
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([v],{type:"text/vcard"}));
+  a.download = "Dr-Efrain-Gonzalez.vcf"; document.body.appendChild(a); a.click(); a.remove();
+}
+$("guardar").onclick = $("guardar2").onclick = guardar;
+
+/* Compartir y copiar */
+$("compartir").onclick = async () => {
+  const d = {title:C.nombre, text:C.rol, url:C.urlPagina};
+  try { navigator.share ? await navigator.share(d) : (await navigator.clipboard.writeText(C.urlPagina), alert("Enlace copiado")); } catch(e){}
+};
+$("copiar").onclick = async ev => {
+  try { await navigator.clipboard.writeText(C.direccion); ev.target.textContent = "¡Copiada!"; setTimeout(()=>ev.target.textContent="Copiar dirección",1800); } catch(e){}
+};
+
+/* Barra fija al salir de la tarjeta de acciones */
+new IntersectionObserver(([en]) => $("barra").classList.toggle("ver", !en.isIntersecting), {rootMargin:"0px 0px -60px 0px"}).observe($("acciones"));
+
+/* Datos estructurados para Google (Schema.org) */
+const ld = document.createElement("script"); ld.type = "application/ld+json";
+ld.textContent = JSON.stringify({"@context":"https://schema.org","@type":"Physician",name:C.nombre,
+  medicalSpecialty:["Pediatric","Gastroenterologic","PlasticSurgery"],telephone:C.tel,
+  address:{"@type":"PostalAddress",streetAddress:"Calle 93 # 11A-28, Consultorio 402",addressLocality:"Bogotá",addressCountry:"CO"},url:C.urlPagina});
+document.head.appendChild(ld);
+</script>
+</body>
+</html>
